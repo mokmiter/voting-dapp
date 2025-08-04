@@ -1,6 +1,6 @@
 let web3;
 let contract;
-const contractAddress = "0xYourContractAddress"; // Replace with your contract address
+const contractAddress = 0x61e77cdc0c83e048f961b04ee652c43ce524540145591ecd39727ca9d98c0373; // Replace with your contract address
 
 const contractABI = [ /* Copy ABI from Remix after compilation */ ];
 
