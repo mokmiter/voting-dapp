@@ -3,15 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Blockchain Voting DApp</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Blockchain Voting System</h1>
-  <button onclick="connectWallet()">Connect Wallet</button>
-  <div id="candidates"></div>
-  <div id="status"></div>
+  <h1>Voting DApp</h1>
 
-  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <button id="connectButton">Connect Wallet</button>
+  <p id="walletAddress"></p>
+
+  <div id="candidateSection">
+    <h2>Candidates</h2>
+    <ul id="candidateList"></ul>
+  </div>
+
+  <div id="voteSection">
+    <h2>Vote for Your Candidate</h2>
+    <input type="text" id="candidateInput" placeholder="Enter candidate name" />
+    <button id="voteButton">Vote</button>
+    <p id="voteStatus"></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.9.0/dist/web3.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
