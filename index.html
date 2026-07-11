@@ -2,28 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blockchain Voting DApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decentralized Voting Platform</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Voting DApp</h1>
 
-  <button id="connectButton">Connect Wallet</button>
-  <p id="walletAddress"></p>
+  <header class="app-header">
+    <div class="header-container">
+      <h1 class="app-title">Decentralized Voting Portal</h1>
+      <div class="wallet-control">
+        <button id="connectButton" class="btn btn-primary">Connect Wallet</button>
+        <span id="walletAddress" class="wallet-address hidden" aria-live="polite"></span>
+      </div>
+    </div>
+  </header>
 
-  <div id="candidateSection">
-    <h2>Candidates</h2>
-    <ul id="candidateList"></ul>
-  </div>
+  <main class="main-container">
+    <!-- Candidates Section -->
+    <section id="candidateSection" class="card">
+      <h2 class="section-title">Current Candidates</h2>
+      <div class="card-body">
+        <ul id="candidateList" class="candidate-list">
+          <!-- Dynamic items injected by app.js -->
+        </ul>
+      </div>
+    </section>
 
-  <div id="voteSection">
-    <h2>Vote for Your Candidate</h2>
-    <input type="text" id="candidateInput" placeholder="Enter candidate name" />
-    <button id="voteButton">Vote</button>
-    <p id="voteStatus"></p>
-  </div>
+    <!-- Voting Section -->
+    <section id="voteSection" class="card">
+      <h2 class="section-title">Cast Your Ballot</h2>
+      <div class="card-body">
+        <form id="voteForm" class="vote-form" onsubmit="return false;">
+          <div class="input-group">
+            <label for="candidateInput" class="form-label">Candidate Name or ID</label>
+            <input 
+              type="text" 
+              id="candidateInput" 
+              class="form-input" 
+              placeholder="e.g., Alice or Candidate ID" 
+              required 
+            />
+          </div>
+          <button id="voteButton" type="submit" class="btn btn-success btn-block">Submit Vote</button>
+        </form>
+        <p id="voteStatus" class="status-message" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/web3@1.9.0/dist/web3.min.js"></script>
-  <script src="app.js"></script>
+  <!-- Modern script loading: Using stable 1.x or 4.x depending on your app logic. Ethers.js is also highly recommended for modern DApps -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
